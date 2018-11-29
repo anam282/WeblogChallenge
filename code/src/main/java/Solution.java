@@ -43,7 +43,7 @@ public class Solution {
         //2. Calculation of average session time
         JavaRDD<Session> sessions = clientIPToSessions.flatMap(pair -> pair._2.iterator());
         Double averageSessionTime = sessions.mapToDouble(Session::getSessionTime).mean();
-        System.out.println("Average time : " + averageSessionTime + " milliseconds");
+        System.out.println(String.format("Average session time : %.2f milliseconds", averageSessionTime));
 
         //3. Unique url visit per session
         JavaPairRDD<String, Integer> uniqueUrlCountPerSession = sessions
@@ -57,8 +57,10 @@ public class Solution {
         List<Tuple2<Long, String>> mostEngagedUsers = sessionTimeToUsers
                 .take(10);
         System.out.println("Session times for top 10 engaged users: ");
+        System.out.println("| Client | Session time (ms) |");
+        System.out.println("| ------ | ----------------- |");
         for (Tuple2<Long, String> engagedUser : mostEngagedUsers) {
-            System.out.println("Client: " + engagedUser._2 + " Session time in milliseconds: " + engagedUser._1);
+            System.out.println("| "+ engagedUser._2 + " | " + engagedUser._1 + " |");
         }
 
 //        System.out.println("unparsed :" + countUnparsedLines(textFile));
