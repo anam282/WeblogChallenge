@@ -24,6 +24,13 @@ public class WebLog implements Serializable, Comparable<WebLog> {
     private String sslCipher;
     private String sslProtocol;
 
+    /**
+     * Parses a line of the web log. If the pattern does not match to 15 elements, returns null. In other words
+     * ignores unparseable data
+     *
+     * @param log
+     * @return
+     */
     public static WebLog getWebLog(String log) {
         List<String> logLine = parseLog(log);
         if(logLine.size() != 15) {

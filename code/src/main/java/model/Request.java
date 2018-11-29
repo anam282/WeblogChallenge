@@ -1,9 +1,13 @@
 package model;
 
 import java.io.Serializable;
-import java.net.HttpURLConnection;
 
 public class Request implements Serializable {
+
+    private String method;
+    private String url;
+    private String httpVersion;
+
     public String getMethod() {
         return method;
     }
@@ -27,10 +31,6 @@ public class Request implements Serializable {
     public void setHttpVersion(String httpVersion) {
         this.httpVersion = httpVersion;
     }
-
-    String method;
-    String url;
-    String httpVersion;
 
     public Request(String request) {
         try {
