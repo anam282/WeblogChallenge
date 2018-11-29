@@ -39,6 +39,7 @@ public class Solution {
         //1. Sessionization of log file per user
         JavaPairRDD<String, List<Session>> clientIPToSessions = clientIpToWebLogs
                 .mapToPair(pair -> new Tuple2<>(pair._1, Session.sessionize(pair._1, pair._2)));
+        clientIPToSessions.saveAsTextFile("/tmp/webreq/clientToSessions");
 
         //2. Calculation of average session time
         JavaRDD<Session> sessions = clientIPToSessions.flatMap(pair -> pair._2.iterator());
