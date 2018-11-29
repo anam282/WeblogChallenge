@@ -12,7 +12,7 @@ The challenge is to make make analytical observations about the data using the d
 4. Lines that did not match the regex are ignored. 22 such lines were found in this dataset.
 
 ### Results:
-1. Average time : 14487.58 milliseconds
+1. Average session time : 14487.58 milliseconds
 2. Session times for top 10 engaged users: 
 
             | Client                | Session time (ms) |
