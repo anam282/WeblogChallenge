@@ -14,7 +14,7 @@ The challenge is to make make analytical observations about the data using the d
 ### Results:
 1. Average session time : 14487.58 milliseconds
 2. Result for Sessions per client and Unique urls per session can be found here https://www.dropbox.com/s/wtar60w90xxh6y5/webreq.tar.gz?dl=0
-3. Session times for top 10 engaged users: 
+3. Top 10 engaged users: 
 
             | Client                | Session time (ms) |
             | ------------------    | ----------------- |
